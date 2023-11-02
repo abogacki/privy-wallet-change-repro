@@ -1,4 +1,3 @@
-"use client";
 import { Content } from "@/components/Content";
 import { Providers } from "@/components/Providers";
 

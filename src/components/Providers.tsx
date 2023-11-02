@@ -5,16 +5,16 @@ import { configureChains } from "wagmi";
 import * as chains from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { PrivyWagmiConnector } from "@privy-io/wagmi-connector";
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 
 const configureChainsConfig = configureChains(
   [chains.polygon, chains.polygonMumbai],
   [publicProvider()]
 );
 
-export const Providers = ({ children }: { children: ReactNode }) => (
+export const Providers: FC<{ children: ReactNode }> = ({ children }) => (
   <PrivyProvider
-    appId={process.env.PRIVY_APP_ID || ''}
+    appId={process.env.PRIVY_APP_ID || ""}
     config={{
       embeddedWallets: {
         createOnLogin: "users-without-wallets",
